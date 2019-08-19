@@ -17,17 +17,11 @@ def door_state():
     if r.status_code != 200:
         return "Error code {:d}".format(r.status_code)
 
-    # TODO: Fix invalid JSON - must be double quotes for key.
-    #print(r.text)
+    result = r.json()
+    if "distance" not in result or not isinstance(result["distance"], int):
+        return "Malformed result"
 
-    #result = r.json()
-    #if "distance" not in result or not isinstance(result["distance"], int):
-    #    return "Malformed result"
-
-    #distance = result["distance"]
-    assert r.text.startswith("{'distance': ")
-    assert r.text.endswith("}")
-    distance = int(r.text[len("{'distance': "):-1])
+    distance = result["distance"]
     if distance <= app.config["LOWER_THRESHOLD"] and distance > 0:
         state = LockState.Locked if app.config["LOWER_LOCKED"] else LockState.Unlocked
     elif distance >= app.config["HIGHER_THRESHOLD"]:
