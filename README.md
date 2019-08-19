@@ -3,6 +3,9 @@
 You've gotten halfway down the sidewalk. Did you lock the door? Pull up this
 web app to check.
 
+This project uses [`pipenv`](https://pipenv.readthedocs.io/en/latest/install/);
+run `pipenv shell` to set up an environment for it.
+
 ## Hardware
 
 * ESP8266 WiFi microchip such as [this ESP8266 development board](https://www.amazon.com/Makerfocus-ESP8266-ESP-12E-Internet-Development/dp/B01IK9GEQG/)
