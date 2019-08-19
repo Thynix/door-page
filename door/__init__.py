@@ -50,7 +50,7 @@ def door_state():
     <title>Door Page</title>
     <style>
         body {{ background-color: slategray; }}
-        div {{ font-size: 3em; }}
+        div {{ font-size: 18vw; }}
         #locked {{ color: green; }}
         #unlocked {{ color: red; }}
         #unknown  {{ color: yellow; }}
