@@ -27,10 +27,10 @@ Assuming the MakerFocus board linked above:
 2. Set up the Arduino IDE to use the board: File > Preferences and copy to "Additional Boards Manager URLs": `http://arduino.esp8266.com/stable/package_esp8266com_index.json`
 3. Go to Tools > Board > Board Manager, search for "esp8266" and install _esp8266_ by _ESP8266 Community_.
 4. Set up the flash settings:
-   Tools > Board > NodeMCU 1.0 (ESP-12E Module)
-   Tools > Flash Size > 4M (3M SPIFFS)
-   Tools > CPU Frequency > 80 Mhz
-   Tools > Upload Speed > 921600
+   * Tools > Board > NodeMCU 1.0 (ESP-12E Module)
+   * Tools > Flash Size > 4M (3M SPIFFS)
+   * Tools > CPU Frequency > 80 Mhz
+   * Tools > Upload Speed > 921600
 5. Download and run the NodeMCU flasher: [32-bit](https://github.com/nodemcu/nodemcu-flasher/tree/master/Win32/Release) [64-bit](https://github.com/nodemcu/nodemcu-flasher/tree/master/Win64/Release)
 6. Set Tools > Port to the port that appeared after flashing.
 7. Test flashing the board with an example program to blink the LED: File > Examples > ESP8266 > Blink. Click "Upload."
