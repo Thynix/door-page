@@ -1,9 +1,5 @@
-# The lower threshold or below appears as the given state.
-LOWER_THRESHOLD = 20
-LOWER_LOCKED = True
+# Inclusive bounds; outside of these is considered unknown.
+LOCKED_BOUNDS = (5, 15)
+UNLOCKED_BOUNDS = (100, 115)
 
-# The higher threshold or above appears as the given state.
-HIGHER_THRESHOLD = 100
-HIGHER_LOCKED = False
-
-QUERY_URL = "http://ip"
+QUERY_URL = "http://the.ip.goes.here"

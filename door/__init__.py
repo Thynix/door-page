@@ -22,10 +22,10 @@ def door_state():
         return "Malformed result"
 
     distance = result["distance"]
-    if distance <= app.config["LOWER_THRESHOLD"] and distance > 0:
-        state = LockState.Locked if app.config["LOWER_LOCKED"] else LockState.Unlocked
-    elif distance >= app.config["HIGHER_THRESHOLD"]:
-        state = LockState.Locked if app.config["HIGHER_LOCKED"] else LockState.Unlocked
+    if within_bounds(app.config["LOCKED_BOUNDS"], distance):
+        state = LockState.Locked
+    elif within_bounds(app.config["UNLOCKED_BOUNDS"], distance):
+        state = LockState.Unlocked
     else:
         # 0 may indicate sensor miswiring, such as disconnected trigger pin, so
         # consider 0 to be unknown.
@@ -55,3 +55,6 @@ def door_state():
   </body>
 </html>
 """.format(content)
+
+def within_bounds(bounds, distance):
+    return distance >= bounds[0] and distance <= bounds[1]
