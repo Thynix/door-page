@@ -6,4 +6,4 @@ LOWER_LOCKED = True
 HIGHER_THRESHOLD = 100
 HIGHER_LOCKED = False
 
-QUERY_URL = "http://192.168.1.113"
+QUERY_URL = "http://ip"
